@@ -22,9 +22,10 @@ express()
     res.render('main.jade', info);
   })
   .get('/word', function(req, res) {
+    var expiration = { expires: new Date(Date.now() + 900000) };
     res
-      .cookie('minLength', req.query.minLength, { expires: new Date(Date.now() + 900000) })
-      .cookie('maxLength', req.query.maxLength, { expires: new Date(Date.now() + 900000) })
+      .cookie('minLength', req.query.minLength, expiration)
+      .cookie('maxLength', req.query.maxLength, expiration)
       .json(words(req.query));
   })
   .listen(port)

@@ -1,16 +1,14 @@
+@import "util"
 @import "modes/wheel"
 @import "modes/flat"
 @import "modes/mobile"
-
-header-height = 30px
-incorrect-color = #a22
 
 *
   box-sizing border-box
 
 body
   font-family verdana,helvetica,arial,sans-serif
-  color #333
+  color text
 
 #top-bar
   z-index 2
@@ -19,8 +17,8 @@ body
   left 0
   right 0
   height header-height
-  background-color #444
-  color #fff
+  background-color dark
+  color white
   padding 0 5px
 
   font-size 20px
@@ -38,7 +36,7 @@ body
     width 40px
     background-color inherit
     color inherit
-    border 2px solid #888
+    border 2px solid lighten(dark, 60%)
 
 #shuffled
   height 44px
@@ -62,24 +60,20 @@ body
   display table
 
 button
-  border 3px solid #444
-  color #333
+  border 3px solid dark
+  color text
   font-size 20px
   padding 5px
   border-radius 10px
 
 #hint
-  background-color #ddd
+  background-color background
 
 #skip
-  background-color #ddd
+  background-color background
 
 #reshuffle
-  background-color #ddd
-
-#buttons button
-  min-width 100px
-  margin 5px
+  background-color background
 
 #main
   margin-top header-height
@@ -93,6 +87,11 @@ body.full
   #shuffled
     padding-top 20px
 
+  #buttons
+    min-width 360px
+    button
+      width 110px
+      margin 5px
 
 #game > *
   margin-left auto
@@ -132,7 +131,7 @@ body.full
   display table
   text-align center
   margin 20px auto 0 auto
-  color #999
+  color lighten(text, 60%)
 
   span
     width 100%

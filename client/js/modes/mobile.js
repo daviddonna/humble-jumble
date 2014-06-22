@@ -1,9 +1,6 @@
 /* jshint browser: true, jquery: true */
 
 var mobileMode = (function() {
-  var LEFT = 1;
-  var RIGHT = -1;
-
   function findUnused(letter) {
     var shuffledLetters = $('.shuffled-letter');
     for (var i = 0; i < shuffledLetters.length; i++) {
@@ -70,12 +67,12 @@ var mobileMode = (function() {
 
     endRound: function() {
       $('#mobile-input')
-        .off('input')
-        .blur();
+        .off('input');
     },
 
     reshuffle: function(shuffled) {
       displayShuffled(shuffled);
+      analyzeUsage();
     },
 
     refocus: function() {

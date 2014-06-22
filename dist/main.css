@@ -39,10 +39,10 @@
   border: none;
 }
 .answer-letter-container.focus {
-  background-color: #f2f2f2;
+  background-color: #eee;
 }
 .answer-letter-container.focus .answer-letter {
-  border-color: #666;
+  border-color: #a2a2a2;
 }
 .answer-letter {
   background: none;
@@ -56,7 +56,7 @@
   overflow: hidden;
 }
 .answer-letter.incorrect {
-  color: incorrect-color;
+  color: #a22;
 }
 body.mobile #top-bar {
   position: absolute;
@@ -64,16 +64,21 @@ body.mobile #top-bar {
 body.mobile #right-column {
   position: relative;
   display: table;
-  margin: 1em auto;
+  margin: 0.5em auto;
   font-size: 150%;
 }
 body.mobile #shuffled .shuffled-letter {
   font-size: 25px;
   margin: 7px;
 }
+body.mobile #buttons button {
+  font-size: 85%;
+  width: 80px;
+  margin: 2px;
+}
 #mobile-input {
   background: none;
-  border: 1px solid #000;
+  border: 1px solid #333;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 5px;
@@ -116,7 +121,7 @@ body {
   width: 40px;
   background-color: inherit;
   color: inherit;
-  border: 2px solid #888;
+  border: 2px solid #b4b4b4;
 }
 #shuffled {
   height: 44px;
@@ -155,10 +160,6 @@ button {
 #reshuffle {
   background-color: #ddd;
 }
-#buttons button {
-  min-width: 100px;
-  margin: 5px;
-}
 #main {
   margin-top: 30px;
   padding-top: 10px;
@@ -169,6 +170,13 @@ body.full #game > * {
 }
 body.full #shuffled {
   padding-top: 20px;
+}
+body.full #buttons {
+  min-width: 360px;
+}
+body.full #buttons button {
+  width: 110px;
+  margin: 5px;
 }
 #game > * {
   margin-left: auto;
@@ -209,13 +217,13 @@ body.full #right-column {
   display: table;
   text-align: center;
   margin: 20px auto 0 auto;
-  color: #999;
+  color: #adadad;
 }
 #footer span {
   width: 100%;
 }
 #footer a {
-  color: #999;
+  color: #adadad;
   text-decoration: none;
 }
 #footer a:hover {
