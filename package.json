@@ -1,17 +1,17 @@
 {
-  "name": "jumble",
+  "name": "humble-jumble",
   "version": "0.0.0",
-  "description": "just the jumbles, the jumbles!",
+  "description": "simple word scramble webapp",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "."
+    "url": "https://github.com/daviddonna/humble-jumble.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "David Donna",
+  "license": "MIT",
   "dependencies": {
     "underscore": "~1.6.0",
     "express": "~4.4.3",
@@ -26,5 +26,9 @@
     "grunt-concurrent": "~0.5.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-nodemon": "~0.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/daviddonna/humble-jumble/issues",
+    "email": "davidadonna@gmail.com"
   }
 }

@@ -9,8 +9,8 @@ function choose(words) {
 
 function validate(options) {
   return {
-    minLength: options.minLength || 4,
-    maxLength: options.maxLength || 9,
+    minLength: options.minLength,
+    maxLength: options.maxLength,
   };
 }
 
