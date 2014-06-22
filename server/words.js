@@ -21,12 +21,19 @@ var allWords = fs
   })
   .split('\n');
 
+var profanity = [
+  'shit',
+  'fucking',
+];
+
 module.exports = function(rawOptions) {
   var options = validate(rawOptions);
 
   var word = choose(_.filter(allWords, function(word) {
     return word.length >= options.minLength &&
-           word.length <= options.maxLength;
+           word.length <= options.maxLength &&
+           word.charAt(0) != word.charAt(0).toUpperCase() &&
+           profanity.indexOf(word) == -1;
   }));
 
   return {

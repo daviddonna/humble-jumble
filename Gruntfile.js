@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         files: ['client/views/*.jade'],
       },
       style: {
-        files: ['client/style/*.styl'],
+        files: ['client/**/*.styl'],
         tasks: ['stylus'],
       },
       scripts: {

@@ -1,5 +1,6 @@
 @import "modes/wheel"
 @import "modes/flat"
+@import "modes/mobile"
 
 header-height = 30px
 incorrect-color = #a22
@@ -23,6 +24,7 @@ body
   padding 0 5px
 
   font-size 20px
+
   *
     margin-top 2px
 
@@ -38,15 +40,21 @@ body
     color inherit
     border 2px solid #888
 
+#shuffled
+  height 44px
+
+  .shuffled-letter
+    display inline-block
+    font-size 35px
+    margin 10px
+
+
 .shuffled-letter
 .answer-letter
   text-transform uppercase
 
 .shuffled-letter.used
   color #aaa
-
-#answer
-  height 76px
 
 #answer
 #buttons
@@ -76,20 +84,19 @@ button
 #main
   margin-top header-height
   padding-top 10px
-  margin-right 180px
+  position relative
+
+body.full
+  #game > *
+    margin-bottom 20px
+
+  #shuffled
+    padding-top 20px
+
 
 #game > *
-  margin-bottom 20px
   margin-left auto
   margin-right auto
-
-#right-column
-  position fixed
-  top header-height
-  bottom 0
-  right 0
-  overflow auto
-  background-color #eee
 
 #finished
   width 180px
@@ -108,3 +115,29 @@ button
     text-align right
     span:after
       content: "s"
+
+body.full
+  #main
+    margin-right 180px
+
+  #right-column
+    position fixed
+    top header-height
+    bottom 0
+    right 0
+    overflow auto
+    background-color #eee
+
+#footer
+  display table
+  text-align center
+  margin 20px auto 0 auto
+  color #999
+
+  span
+    width 100%
+  a
+    color @color
+    text-decoration none
+    &:hover
+      text-decoration underline

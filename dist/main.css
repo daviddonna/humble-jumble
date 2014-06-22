@@ -22,15 +22,6 @@
   font-size: 30px;
   margin-top: -20px;
 }
-#main.flat #shuffled {
-  height: 44px;
-  padding-top: 20px;
-}
-#main.flat #shuffled .shuffled-letter {
-  display: inline-block;
-  font-size: 35px;
-  margin: 10px;
-}
 .answer-letter-container {
   display: inline-block;
   background-color: #ddd;
@@ -66,6 +57,30 @@
 }
 .answer-letter.incorrect {
   color: incorrect-color;
+}
+body.mobile #top-bar {
+  position: absolute;
+}
+body.mobile #right-column {
+  position: relative;
+  display: table;
+  margin: 1em auto;
+  font-size: 150%;
+}
+body.mobile #shuffled .shuffled-letter {
+  font-size: 25px;
+  margin: 7px;
+}
+#mobile-input {
+  background: none;
+  border: 1px solid #000;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -103,15 +118,20 @@ body {
   color: inherit;
   border: 2px solid #888;
 }
+#shuffled {
+  height: 44px;
+}
+#shuffled .shuffled-letter {
+  display: inline-block;
+  font-size: 35px;
+  margin: 10px;
+}
 .shuffled-letter,
 .answer-letter {
   text-transform: uppercase;
 }
 .shuffled-letter.used {
   color: #aaa;
-}
-#answer {
-  height: 76px;
 }
 #answer,
 #buttons,
@@ -142,20 +162,17 @@ button {
 #main {
   margin-top: 30px;
   padding-top: 10px;
-  margin-right: 180px;
+  position: relative;
+}
+body.full #game > * {
+  margin-bottom: 20px;
+}
+body.full #shuffled {
+  padding-top: 20px;
 }
 #game > * {
-  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-}
-#right-column {
-  position: fixed;
-  top: 30px;
-  bottom: 0;
-  right: 0;
-  overflow: auto;
-  background-color: #eee;
 }
 #finished {
   width: 180px;
@@ -176,4 +193,31 @@ button {
 }
 #finished .time span:after {
   content: "s";
+}
+body.full #main {
+  margin-right: 180px;
+}
+body.full #right-column {
+  position: fixed;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #eee;
+}
+#footer {
+  display: table;
+  text-align: center;
+  margin: 20px auto 0 auto;
+  color: #999;
+}
+#footer span {
+  width: 100%;
+}
+#footer a {
+  color: #999;
+  text-decoration: none;
+}
+#footer a:hover {
+  text-decoration: underline;
 }

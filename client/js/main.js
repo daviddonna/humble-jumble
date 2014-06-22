@@ -7,7 +7,7 @@ var currentWord = '';
 var started;
 
 // Object with controlling methods for the UI.
-var mode = flat;
+var mode;
 
 function gotWord(data) {
   var word = data.word.toLowerCase();
