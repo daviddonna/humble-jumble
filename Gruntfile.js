@@ -19,8 +19,7 @@ module.exports = function(grunt) {
 
     concat: {
       dist: {
-        src: ['client/js/wheel.js',
-              'client/js/flat.js',
+        src: ['client/js/modes/*.js',
               'client/js/shuffle.js',
               'client/js/main.js'],
         dest: 'dist/main.js',
@@ -59,11 +58,8 @@ module.exports = function(grunt) {
         tasks: ['stylus'],
       },
       scripts: {
-        files: ['client/js/*.js'],
+        files: ['client/**/*.js'],
         tasks: ['concat'],
-      },
-      static: {
-        files: ['public/*'],
       },
     },
   });

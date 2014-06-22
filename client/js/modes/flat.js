@@ -1,3 +1,9 @@
+/* jslint browser: true, jquery: true */
+
+/*
+  Simple jumble view. Displays the shuffled letters in a row
+ */
+
 var flat = (function() {
   var LEFT = 1;
   var RIGHT = -1;
@@ -135,7 +141,7 @@ var flat = (function() {
     jqShuffled.empty();
     shuffled.split('').forEach(function(letter) {
       jqShuffled.append('<div class="shuffled-letter">' +
-        '<span>'+letter+'</span>' + 
+        '<span>'+letter+'</span>' +
         '</div>');
     });
   }

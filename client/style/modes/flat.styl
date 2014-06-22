@@ -1,0 +1,45 @@
+#main.flat #shuffled
+  height 44px
+  padding-top 20px
+
+  .shuffled-letter
+    display inline-block
+    font-size 35px
+    margin 10px
+
+.answer-letter-container
+  display inline-block
+  background-color #ddd
+  border-radius 8px
+  padding 6px
+  margin 2px
+  border 1px solid white
+
+  // a dummy is used to create intuitive behavior
+  &:last-child
+    width 0
+    padding 0
+    margin 0
+    overflow hidden
+    border none
+
+  &.focus
+    background-color #f2f2f2
+
+    .answer-letter
+      border-color #666
+
+.answer-letter
+  background none
+  border none
+
+  width 45px
+  height 50px
+  border-bottom 4px solid #333
+  padding 3px
+  text-align center
+  font-size 35px
+  overflow hidden
+
+  &.incorrect
+    color incorrect-color

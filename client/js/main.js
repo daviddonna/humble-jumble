@@ -1,9 +1,12 @@
 /* jslint browser: true, jquery: true */
 
-// mode should emit 'submit' event
-
+// Word to be guessed.
 var currentWord = '';
+
+// Timestamp for when the current word was first received.
 var started;
+
+// Object with controlling methods for the UI.
 var mode = flat;
 
 function gotWord(data) {

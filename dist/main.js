@@ -1,30 +1,9 @@
-var wheel = (function() {
-  function position(index, wordLength, radius) {
-    var angle = (2 * Math.PI) * (index / wordLength) + Math.PI;
-    return {
-      top: Math.round(radius * Math.cos(angle) + radius),
-      left: Math.round(radius * Math.sin(angle) + radius),
-    };
-  }
+/* jslint browser: true, jquery: true */
 
-  function displayShuffled(word) {
-    var container = $('#wheel');
-    container.empty();
-    var smallDimension = Math.min(container.height(), container.width());
-    var radius = (smallDimension) / 2 - 30;
-    console.log(radius);
-    for (var i = 0; i < word.length; i++) {
-      var letter = word.charAt(i);
-      var pos = position(i, word.length, radius);
-      var element = $('<div class="shuffled-letter"><span>'+letter+'</span></div>');
-      element.css(pos).appendTo(container);
-    }
-  }
+/*
+  Simple jumble view. Displays the shuffled letters in a row
+ */
 
-  return {
-    display: displayShuffled,
-  };
-})();
 var flat = (function() {
   var LEFT = 1;
   var RIGHT = -1;
@@ -162,7 +141,7 @@ var flat = (function() {
     jqShuffled.empty();
     shuffled.split('').forEach(function(letter) {
       jqShuffled.append('<div class="shuffled-letter">' +
-        '<span>'+letter+'</span>' + 
+        '<span>'+letter+'</span>' +
         '</div>');
     });
   }
@@ -205,6 +184,33 @@ var flat = (function() {
     },
   };
 })();
+var wheel = (function() {
+  function position(index, wordLength, radius) {
+    var angle = (2 * Math.PI) * (index / wordLength) + Math.PI;
+    return {
+      top: Math.round(radius * Math.cos(angle) + radius),
+      left: Math.round(radius * Math.sin(angle) + radius),
+    };
+  }
+
+  function displayShuffled(word) {
+    var container = $('#wheel');
+    container.empty();
+    var smallDimension = Math.min(container.height(), container.width());
+    var radius = (smallDimension) / 2 - 30;
+    console.log(radius);
+    for (var i = 0; i < word.length; i++) {
+      var letter = word.charAt(i);
+      var pos = position(i, word.length, radius);
+      var element = $('<div class="shuffled-letter"><span>'+letter+'</span></div>');
+      element.css(pos).appendTo(container);
+    }
+  }
+
+  return {
+    display: displayShuffled,
+  };
+})();
 var shuffle = (function() {
   function distant(word, shuffled) {
     var last = word.length - 1;
@@ -233,10 +239,13 @@ var shuffle = (function() {
 
 /* jslint browser: true, jquery: true */
 
-// mode should emit 'submit' event
-
+// Word to be guessed.
 var currentWord = '';
+
+// Timestamp for when the current word was first received.
 var started;
+
+// Object with controlling methods for the UI.
 var mode = flat;
 
 function gotWord(data) {

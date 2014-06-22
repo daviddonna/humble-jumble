@@ -12,16 +12,13 @@ express()
   .use(express.static(__dirname + '/../dist'))
   .use(cookieParser())
   .get('/', function(req, res) {
-    console.log('main page');
     var playerInfo = {
-      playerName: 'mcsquiggedy',
       minLength: req.cookies.minLength || 4,
-      maxLength: req.cookies.maxLength || 9,
+      maxLength: req.cookies.maxLength || 8,
     };
     res.render('main.jade', playerInfo);
   })
   .get('/word', function(req, res) {
-    console.log('word');
     res
       .cookie('minLength', req.query.minLength, { expires: new Date(Date.now() + 900000) })
       .cookie('maxLength', req.query.maxLength, { expires: new Date(Date.now() + 900000) })

@@ -22,6 +22,51 @@
   font-size: 30px;
   margin-top: -20px;
 }
+#main.flat #shuffled {
+  height: 44px;
+  padding-top: 20px;
+}
+#main.flat #shuffled .shuffled-letter {
+  display: inline-block;
+  font-size: 35px;
+  margin: 10px;
+}
+.answer-letter-container {
+  display: inline-block;
+  background-color: #ddd;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  padding: 6px;
+  margin: 2px;
+  border: 1px solid #fff;
+}
+.answer-letter-container:last-child {
+  width: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border: none;
+}
+.answer-letter-container.focus {
+  background-color: #f2f2f2;
+}
+.answer-letter-container.focus .answer-letter {
+  border-color: #666;
+}
+.answer-letter {
+  background: none;
+  border: none;
+  width: 45px;
+  height: 50px;
+  border-bottom: 4px solid #333;
+  padding: 3px;
+  text-align: center;
+  font-size: 35px;
+  overflow: hidden;
+}
+.answer-letter.incorrect {
+  color: incorrect-color;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -62,15 +107,6 @@ body {
 .answer-letter {
   text-transform: uppercase;
 }
-#main.flat #shuffled {
-  height: 44px;
-  padding-top: 20px;
-}
-#main.flat #shuffled .shuffled-letter {
-  display: inline-block;
-  font-size: 35px;
-  margin: 10px;
-}
 .shuffled-letter.used {
   color: #aaa;
 }
@@ -81,42 +117,6 @@ body {
 #buttons,
 #shuffled {
   display: table;
-}
-.answer-letter-container {
-  display: inline-block;
-  background-color: #ddd;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  padding: 6px;
-  margin: 2px;
-  border: 1px solid #fff;
-}
-.answer-letter-container:last-child {
-  width: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  border: none;
-}
-.answer-letter-container.focus {
-  background-color: #f2f2f2;
-}
-.answer-letter-container.focus .answer-letter {
-  border-color: #666;
-}
-.answer-letter {
-  background: none;
-  border: none;
-  width: 45px;
-  height: 50px;
-  border-bottom: 4px solid #333;
-  padding: 3px;
-  text-align: center;
-  font-size: 35px;
-  overflow: hidden;
-}
-.answer-letter.incorrect {
-  color: #a22;
 }
 button {
   border: 3px solid #444;
@@ -142,7 +142,7 @@ button {
 #main {
   margin-top: 30px;
   padding-top: 10px;
-  margin-right: 130px;
+  margin-right: 180px;
 }
 #game > * {
   margin-bottom: 20px;
@@ -158,7 +158,7 @@ button {
   background-color: #eee;
 }
 #finished {
-  width: 160px;
+  width: 180px;
 }
 #finished tr {
   display: none;
@@ -167,10 +167,10 @@ button {
   color: #a22;
 }
 #finished .word {
-  padding-left: 2px;
+  padding-left: 5px;
 }
 #finished .time {
-  padding-right: 2px;
+  padding-right: 5px;
   width: 40px;
   text-align: right;
 }
