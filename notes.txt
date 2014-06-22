@@ -27,3 +27,22 @@ TODO
     wheel mode
     decouple modes from currentWord
     testing
+
+// TODO: alter so that it works for the cumulation of several elements
+// maybe:
+//   wrap scrambled letters in span
+//   adjustHeights on container span
+//   maybe use CSS3 scaling instead
+function adjustHeights(elem) {
+  var fontstep = 2;
+  var jqElem = $(elem);
+  var tooWide = jqElem.height() > jqElem.parent().height();
+  var tooTall = jqElem.width()  > jqElem.parent().width();
+  if (tooWide || tooTall) {
+    var newFontSize = ((jqElem.css('font-size').substr(0,2) - fontstep)) + 'px';
+    jqElem
+      .css('font-size', newFontSize)
+      .css('line-height',((jqElem.css('font-size').substr(0,2))) + 'px');
+    adjustHeights(elem);
+  }
+}

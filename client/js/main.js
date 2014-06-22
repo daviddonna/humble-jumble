@@ -38,10 +38,17 @@ function endRound(correct) {
 }
 
 $(function() {
-  $('#skip').click(function() { endRound(false); });
-  $('#hint').click(function() { mode.hint(); });
+  $('#skip').click(function() {
+    endRound(false);
+    mode.refocus();
+  });
+  $('#hint').click(function() {
+    mode.hint();
+    mode.refocus();
+  });
   $('#reshuffle').click(function() {
     mode.reshuffle(shuffle(currentWord));
+    mode.refocus();
   });
 
   $(document).on('submit', function(e) {

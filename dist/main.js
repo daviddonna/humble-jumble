@@ -182,6 +182,10 @@ var flat = (function() {
     reshuffle: function(shuffled) {
       displayShuffled(shuffled);
     },
+
+    refocus: function() {
+      $('*').blur();
+    },
   };
 })();
 /* jshint browser: true, jquery: true */
@@ -263,8 +267,13 @@ var mobileMode = (function() {
     reshuffle: function(shuffled) {
       displayShuffled(shuffled);
     },
+
+    refocus: function() {
+      $('#mobile-input').focus();
+    },
   };
 })();
+
 var wheel = (function() {
   function position(index, wordLength, radius) {
     var angle = (2 * Math.PI) * (index / wordLength) + Math.PI;
@@ -358,10 +367,17 @@ function endRound(correct) {
 }
 
 $(function() {
-  $('#skip').click(function() { endRound(false); });
-  $('#hint').click(function() { mode.hint(); });
+  $('#skip').click(function() {
+    endRound(false);
+    mode.refocus();
+  });
+  $('#hint').click(function() {
+    mode.hint();
+    mode.refocus();
+  });
   $('#reshuffle').click(function() {
     mode.reshuffle(shuffle(currentWord));
+    mode.refocus();
   });
 
   $(document).on('submit', function(e) {

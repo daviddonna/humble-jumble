@@ -77,5 +77,9 @@ var mobileMode = (function() {
     reshuffle: function(shuffled) {
       displayShuffled(shuffled);
     },
+
+    refocus: function() {
+      $('#mobile-input').focus();
+    },
   };
 })();

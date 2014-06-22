@@ -182,5 +182,9 @@ var flat = (function() {
     reshuffle: function(shuffled) {
       displayShuffled(shuffled);
     },
+
+    refocus: function() {
+      $('*').blur();
+    },
   };
 })();
