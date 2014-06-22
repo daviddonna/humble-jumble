@@ -1,0 +1,52 @@
+operations
+    flag as obscure
+    flag as inappropriate
+    hint (first letter, last letter)
+    rescramble
+    skip (flash answer)
+
+    answer
+        click/drag
+        type
+
+settings
+    UI
+        serial | wheel | free
+        indicate used letters
+    words
+        lengths (min/max)
+        select dictionary
+        proper nouns on | off
+
+stats
+    time
+        quickest
+        slowest
+        average
+    past words
+        got
+        didn't get
+        time spent
+
+scramble
+    ensure strange ordering
+
+server
+    getWord(
+        minLength
+        maxLength
+        properNouns
+        dictionary
+    )
+
+abstractions
+    interface
+        input
+        cells
+        onKeypress()
+        hint()
+        display {word, shuffled}
+
+    events
+        correct
+        skip

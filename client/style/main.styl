@@ -1,0 +1,155 @@
+@import wheel
+
+header-height = 30px
+incorrect-color = #a22
+
+*
+  box-sizing border-box
+
+body
+  font-family verdana,helvetica,arial,sans-serif
+  color #333
+
+#top-bar
+  z-index 2
+  position fixed
+  top 0
+  left 0
+  right 0
+  height header-height
+  background-color #444
+  color #fff
+  padding 0 5px
+
+  font-size 20px
+  *
+    margin-top 2px
+
+#length-limits
+  float right
+
+  *
+    font-size 15px
+
+  input
+    width 40px
+    background-color inherit
+    color inherit
+    border 2px solid #888
+
+.shuffled-letter
+.answer-letter
+  text-transform uppercase
+
+#main.flat #shuffled
+  height 44px
+  padding-top 20px
+
+  .shuffled-letter
+    display inline-block
+    font-size 35px
+    margin 10px
+
+.shuffled-letter.used
+  color #aaa
+
+#answer
+  height 76px
+
+#answer
+#buttons
+#shuffled
+  display table
+
+.answer-letter-container
+  display inline-block
+  background-color #ddd
+  border-radius 8px
+  padding 6px
+  margin 2px
+  border 1px solid white
+
+  // a dummy is used to preserve
+  &:last-child
+    width 0
+    padding 0
+    margin 0
+    overflow hidden
+    border none
+
+  &.focus
+    background-color #f2f2f2
+
+    .answer-letter
+      border-color #666
+
+.answer-letter
+  background none
+  border none
+
+  width 45px
+  height 50px
+  border-bottom 4px solid #333
+  padding 3px
+  text-align center
+  font-size 35px
+  overflow hidden
+
+  &.incorrect
+    color incorrect-color
+
+button
+  border 3px solid #444
+  color #333
+  font-size 20px
+  padding 5px
+  border-radius 10px
+
+#hint
+  background-color #ddd
+
+#skip
+  background-color #ddd
+
+#reshuffle
+  background-color #ddd
+
+#buttons button
+  min-width 100px
+  margin 5px
+
+#main
+  margin-top header-height
+  padding-top 10px
+  margin-right 130px
+
+#game > *
+  margin-bottom 20px
+  margin-left auto
+  margin-right auto
+
+#right-column
+  position fixed
+  top header-height
+  bottom 0
+  right 0
+  overflow auto
+  background-color #eee
+
+#finished
+  width 160px
+
+  tr
+    display none
+    &.missed
+      color incorrect-color
+
+  .word
+    padding-left 2px
+
+  .time
+    padding-right 2px
+    width 40px
+    text-align right
+    span:after
+      content: "s"

@@ -1,0 +1,179 @@
+.wheel {
+  height: 400px;
+  width: 400px;
+  background-color: #f2f2f2;
+  position: relative;
+  border: 20px solid #f2f2f2;
+}
+.wheel .shuffled-letter {
+  cursor: pointer;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 30px solid #ddd;
+}
+.wheel .shuffled-letter span {
+  display: block;
+  width: 30px;
+  text-align: center;
+  margin-left: -15px;
+  font-size: 30px;
+  margin-top: -20px;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: verdana, helvetica, arial, sans-serif;
+  color: #333;
+}
+#top-bar {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background-color: #444;
+  color: #fff;
+  padding: 0 5px;
+  font-size: 20px;
+}
+#top-bar * {
+  margin-top: 2px;
+}
+#length-limits {
+  float: right;
+}
+#length-limits * {
+  font-size: 15px;
+}
+#length-limits input {
+  width: 40px;
+  background-color: inherit;
+  color: inherit;
+  border: 2px solid #888;
+}
+.shuffled-letter,
+.answer-letter {
+  text-transform: uppercase;
+}
+#main.flat #shuffled {
+  height: 44px;
+  padding-top: 20px;
+}
+#main.flat #shuffled .shuffled-letter {
+  display: inline-block;
+  font-size: 35px;
+  margin: 10px;
+}
+.shuffled-letter.used {
+  color: #aaa;
+}
+#answer {
+  height: 76px;
+}
+#answer,
+#buttons,
+#shuffled {
+  display: table;
+}
+.answer-letter-container {
+  display: inline-block;
+  background-color: #ddd;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  padding: 6px;
+  margin: 2px;
+  border: 1px solid #fff;
+}
+.answer-letter-container:last-child {
+  width: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border: none;
+}
+.answer-letter-container.focus {
+  background-color: #f2f2f2;
+}
+.answer-letter-container.focus .answer-letter {
+  border-color: #666;
+}
+.answer-letter {
+  background: none;
+  border: none;
+  width: 45px;
+  height: 50px;
+  border-bottom: 4px solid #333;
+  padding: 3px;
+  text-align: center;
+  font-size: 35px;
+  overflow: hidden;
+}
+.answer-letter.incorrect {
+  color: #a22;
+}
+button {
+  border: 3px solid #444;
+  color: #333;
+  font-size: 20px;
+  padding: 5px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#hint {
+  background-color: #ddd;
+}
+#skip {
+  background-color: #ddd;
+}
+#reshuffle {
+  background-color: #ddd;
+}
+#buttons button {
+  min-width: 100px;
+  margin: 5px;
+}
+#main {
+  margin-top: 30px;
+  padding-top: 10px;
+  margin-right: 130px;
+}
+#game > * {
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#right-column {
+  position: fixed;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #eee;
+}
+#finished {
+  width: 160px;
+}
+#finished tr {
+  display: none;
+}
+#finished tr.missed {
+  color: #a22;
+}
+#finished .word {
+  padding-left: 2px;
+}
+#finished .time {
+  padding-right: 2px;
+  width: 40px;
+  text-align: right;
+}
+#finished .time span:after {
+  content: "s";
+}
