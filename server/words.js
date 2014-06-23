@@ -62,6 +62,7 @@ function removeAnagrams(words) {
 
 function dictionaryFilter(words) {
   var profanity = ['shit', 'fucking'];
+  var validWord = /^[a-z]+$/;
   return removeAnagrams(words)
 
     // remove profanity
@@ -71,7 +72,7 @@ function dictionaryFilter(words) {
 
     // remove proper nouns
     .filter(function(word) {
-      return word.charAt(0) != word.charAt(0).toUpperCase();
+      return validWord.test(word);
     });
 }
 
