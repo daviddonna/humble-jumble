@@ -39,7 +39,6 @@ var mobileMode = (function() {
   }
 
   function displayShuffled(shuffled) {
-    console.log(shuffled);
     var jqShuffled = $('#shuffled');
     jqShuffled.empty();
     shuffled.split('').forEach(function(letter) {
@@ -58,9 +57,9 @@ var mobileMode = (function() {
         .focus();
     },
 
-    hint: function() {
+    hint: function(hintsGiven) {
       $('#mobile-input')
-        .val(currentWord.charAt(0))
+        .val(currentWord.substring(0, hintsGiven))
         .focus();
       analyzeUsage();
     },

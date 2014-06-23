@@ -2,6 +2,7 @@
 
 // Word to be guessed.
 var currentWord = '';
+var hintsGiven = 0;
 
 // Timestamp for when the current word was first received.
 var started;
@@ -33,6 +34,7 @@ function endRound(correct) {
     '</tr>');
 
   record.prependTo($('#finished')).fadeIn(300);
+  hintsGiven = 0;
   mode.endRound();
   getWord();
 }
@@ -43,7 +45,8 @@ $(function() {
     mode.refocus();
   });
   $('#hint').click(function() {
-    mode.hint();
+    hintsGiven++;
+    mode.hint(hintsGiven);
     mode.refocus();
   });
   $('#reshuffle').click(function() {

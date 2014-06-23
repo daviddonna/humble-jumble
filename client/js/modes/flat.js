@@ -165,13 +165,15 @@ var flat = (function() {
       $('.answer-letter-container').first().addClass('focus');
     },
 
-    hint: function() {
+    hint: function(hintsGiven) {
       $('.answer-letter').html('');
       $('.answer-letter-container')
         .removeClass('focus')
         .first()
         .addClass('focus');
-      addLetter(currentWord.charAt(0));
+      for (var i = 0; i < hintsGiven; i++) {
+        addLetter(currentWord.charAt(i));
+      }
       analyzeUsage();
     },
 

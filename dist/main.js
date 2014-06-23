@@ -165,13 +165,15 @@ var flat = (function() {
       $('.answer-letter-container').first().addClass('focus');
     },
 
-    hint: function() {
+    hint: function(hintsGiven) {
       $('.answer-letter').html('');
       $('.answer-letter-container')
         .removeClass('focus')
         .first()
         .addClass('focus');
-      addLetter(currentWord.charAt(0));
+      for (var i = 0; i < hintsGiven; i++) {
+        addLetter(currentWord.charAt(i));
+      }
       analyzeUsage();
     },
 
@@ -229,7 +231,6 @@ var mobileMode = (function() {
   }
 
   function displayShuffled(shuffled) {
-    console.log(shuffled);
     var jqShuffled = $('#shuffled');
     jqShuffled.empty();
     shuffled.split('').forEach(function(letter) {
@@ -248,9 +249,9 @@ var mobileMode = (function() {
         .focus();
     },
 
-    hint: function() {
+    hint: function(hintsGiven) {
       $('#mobile-input')
-        .val(currentWord.charAt(0))
+        .val(currentWord.substring(0, hintsGiven))
         .focus();
       analyzeUsage();
     },
@@ -328,6 +329,7 @@ var shuffle = (function() {
 
 // Word to be guessed.
 var currentWord = '';
+var hintsGiven = 0;
 
 // Timestamp for when the current word was first received.
 var started;
@@ -359,6 +361,7 @@ function endRound(correct) {
     '</tr>');
 
   record.prependTo($('#finished')).fadeIn(300);
+  hintsGiven = 0;
   mode.endRound();
   getWord();
 }
@@ -369,7 +372,8 @@ $(function() {
     mode.refocus();
   });
   $('#hint').click(function() {
-    mode.hint();
+    hintsGiven++;
+    mode.hint(hintsGiven);
     mode.refocus();
   });
   $('#reshuffle').click(function() {
