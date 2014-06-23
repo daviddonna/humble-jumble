@@ -53,12 +53,24 @@ $(function() {
     mode.reshuffle(shuffle(currentWord));
     mode.refocus();
   });
-
-  $(document).on('submit', function(e) {
-    if (e.word == currentWord) {
-      endRound(true);
+  $('#toggle-hints').click(function() {
+    if (this.checked) {
+      $('#hint').show(200);
+    } else {
+      $('#hint').hide(200);
     }
   });
+
+  $(document)
+    .on('submit', function(e) {
+      if (e.word == currentWord) {
+        endRound(true);
+      }
+    })
+    .on('click', 'a', function(e) {
+      window.open($(this).attr('href'), '_blank');
+      e.preventDefault();
+    });
 
   getWord();
 });

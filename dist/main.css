@@ -108,16 +108,20 @@ body {
   padding: 0 5px;
   font-size: 20px;
 }
-#top-bar * {
+#top-bar > * {
   margin-top: 2px;
 }
-#length-limits {
+.option {
   float: right;
-}
-#length-limits * {
   font-size: 15px;
+  margin-left: 1em;
 }
-#length-limits input {
+.option #toggle-hints {
+  padding-top: 3px;
+  width: 13px;
+}
+.option #minLength,
+.option #maxLength {
   width: 40px;
   background-color: inherit;
   color: inherit;
@@ -152,6 +156,7 @@ button {
   border-radius: 10px;
 }
 #hint {
+  display: none;
   background-color: #ddd;
 }
 #skip {
@@ -170,9 +175,6 @@ body.full #game > * {
 }
 body.full #shuffled {
   padding-top: 20px;
-}
-body.full #buttons {
-  min-width: 360px;
 }
 body.full #buttons button {
   width: 110px;
@@ -214,6 +216,7 @@ body.full #right-column {
   background-color: #eee;
 }
 #footer {
+  font-size: 90%;
   display: table;
   text-align: center;
   margin: 20px auto 0 auto;
@@ -223,7 +226,7 @@ body.full #right-column {
   width: 100%;
 }
 #footer a {
-  color: #adadad;
+  color: #828282;
   text-decoration: none;
 }
 #footer a:hover {

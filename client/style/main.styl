@@ -23,16 +23,20 @@ body
 
   font-size 20px
 
-  *
+  > *
     margin-top 2px
 
-#length-limits
+.option
   float right
+  font-size 15px
+  margin-left 1em
 
-  *
-    font-size 15px
+  #toggle-hints
+    padding-top 3px
+    width 13px
 
-  input
+  #minLength
+  #maxLength
     width 40px
     background-color inherit
     color inherit
@@ -67,6 +71,7 @@ button
   border-radius 10px
 
 #hint
+  display none
   background-color background
 
 #skip
@@ -88,7 +93,6 @@ body.full
     padding-top 20px
 
   #buttons
-    min-width 360px
     button
       width 110px
       margin 5px
@@ -128,6 +132,7 @@ body.full
     background-color #eee
 
 #footer
+  font-size 90%
   display table
   text-align center
   margin 20px auto 0 auto
@@ -136,7 +141,7 @@ body.full
   span
     width 100%
   a
-    color @color
+    color darken(@color, 25%)
     text-decoration none
     &:hover
       text-decoration underline

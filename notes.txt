@@ -22,11 +22,12 @@ abstractions
 
 TODO
     documentation
-    simple mode for mobile
-        detect and redirect mobile
     wheel mode
     decouple modes from currentWord
     testing
+    pips for hints taken
+
+
 
 // TODO: alter so that it works for the cumulation of several elements
 // maybe:

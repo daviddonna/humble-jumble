@@ -11,11 +11,14 @@ html
     #top-bar
       if !mobile
         span Humble Jumble
-      #length-limits
-        span Word lengths:&nbsp;
+      .option
+        label(for="minLength") Word lengths:&nbsp;
         input#minLength(type="number", min="1", max="10", value=minLength)
         span &mdash;
         input#maxLength(type="number", min="2", max="20", value=maxLength)
+      .option
+        label(for="toggle-hints") Hints:&nbsp;
+        input#toggle-hints(type="checkbox")
     #main
       #game
         #shuffled
@@ -25,16 +28,19 @@ html
         #buttons
           button#skip
             span Skip
-          button#hint
-            span Hint
           button#reshuffle
             span Reshuffle
+          button#hint
+            span Hint
       #right-column
         table#finished
       #footer
-        span This app uses the 5,000 most common words in the English language.
+        span This app uses 5,000 common English words.
         br
         span
-          | The list is from&nbsp;
-          a(href='www.wordfrequency.info') www.wordfrequency.info
-
+          | words from&nbsp;
+          a(href='http://www.wordfrequency.info') Brigham Young University
+        br
+        span
+          | source on&nbsp;
+          a(href="https://github.com/daviddonna/humble-jumble") GitHub
