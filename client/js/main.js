@@ -58,13 +58,15 @@ $(function() {
     mode.reshuffle(shuffle(currentWord));
     mode.refocus();
   });
-  $('#toggle-hints').click(function() {
-    if (this.checked) {
-      $('#hint').show(200);
-    } else {
-      $('#hint').hide(200);
-    }
-  });
+  $('#toggle-hints')
+    .click(function() {
+      if (this.checked) {
+        $('#hint').show(200);
+      } else {
+        $('#hint').hide(200);
+      }
+    })
+    .get(0).checked = false;
 
   $(document)
     .on('submit', function(e) {
