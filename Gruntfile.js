@@ -24,9 +24,14 @@ module.exports = function(grunt) {
               'client/js/main.js'],
         dest: 'dist/concat.js',
       },
-      assets: {
-        src: ['favicon.ico'],
-        dest: 'dist/favicon.ico',
+    },
+
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'client/assets/',
+        src: '*',
+        dest: 'dist/',
       },
     },
 
@@ -65,14 +70,20 @@ module.exports = function(grunt) {
         files: ['client/**/*.js'],
         tasks: ['concat'],
       },
+      assets: {
+        files: ['client/assets/*'],
+        tasks: ['copy'],
+      },
     },
   });
 
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('default', ['stylus', 'concat', 'concurrent']);
+  grunt.registerTask('build', ['stylus', 'concat', 'copy']);
+  grunt.registerTask('default', ['build', 'concurrent']);
 };
