@@ -76,7 +76,6 @@ function dictionaryFilter(words) {
     });
 }
 
-// http://www.englishclub.com/vocabulary/common-words-5000.htm
 var allWords = dictionaryFilter(fs
   .readFileSync(__dirname + '/dictionaries/common_words.txt', {
     encoding: 'utf8'

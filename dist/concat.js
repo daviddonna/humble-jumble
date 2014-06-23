@@ -354,9 +354,14 @@ function getWord() {
 function endRound(correct) {
   var finished = new Date().getTime();
   var timeElapsed = finished - started;
+  var hinted = currentWord.substring(0, hintsGiven);
+  var unhinted = currentWord.substring(hintsGiven);
 
   var record = $('<tr'+ (correct ? '' : ' class="missed"') + '>' +
-    '<td class="word">' + currentWord + '</td>' +
+    '<td class="word">' +
+    '<span class="hinted">' + hinted + '</span>' +
+    '<span>' + unhinted + '</span>' +
+    '</td>' +
     '<td class="time"><span>' + (timeElapsed / 1000).toFixed(1) + '</span></td>' +
     '</tr>');
 
