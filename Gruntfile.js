@@ -22,7 +22,11 @@ module.exports = function(grunt) {
         src: ['client/js/modes/*.js',
               'client/js/shuffle.js',
               'client/js/main.js'],
-        dest: 'dist/main.js',
+        dest: 'dist/concat.js',
+      },
+      assets: {
+        src: ['favicon.ico'],
+        dest: 'dist/favicon.ico',
       },
     },
 
